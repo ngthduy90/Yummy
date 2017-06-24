@@ -9,5 +9,6 @@ target 'Yummy' do
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON', '~> 3.1'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'OAuthSwift', '~> 1.1'
 
 end

@@ -12,14 +12,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        YummyClient.instance.search(
+            with: "Thai",
+            sort: YummySortMode.bestMatched,
+            categories: nil,
+            deals: true) { response -> Void in
+                switch response {
+                case .success(let result):
+                    print(result.rawString() ?? "")
+                default:
+                    print("ABC")
+                }
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
