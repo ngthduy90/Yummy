@@ -16,14 +16,19 @@ protocol FilterViewControllerDelegate: class {
 
 class FilterViewController: UIViewController {
     
+    @IBOutlet weak var filterTableView: UITableView!
+    
     weak var delegate: FilterViewControllerDelegate?
     
     var businessFilters = BusinessFilters()
+    fileprivate let filterTableHandler = FilterTableViewHandler()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         renderNavigationBar()
+        assignDelegates()
+        renderFilterTable()
     }
     
     @IBAction func didTapDismissScreen(_ sender: Any) {
@@ -34,6 +39,17 @@ class FilterViewController: UIViewController {
 }
 
 extension FilterViewController {
+    
+    fileprivate func assignDelegates() {
+        filterTableView.delegate = filterTableHandler
+        filterTableView.dataSource = filterTableHandler
+    }
+    
+    fileprivate func renderFilterTable() {
+        filterTableView.separatorStyle = .none
+//        filterTableView.estimatedRowHeight = 400.0
+//        filterTableView.rowHeight = UITableViewAutomaticDimension
+    }
     
     fileprivate func renderNavigationBar() {
         let backgroundImage = UIImage(color: HexColor("E35959")!, size: (navigationController?.navigationBar.frame.size)!)

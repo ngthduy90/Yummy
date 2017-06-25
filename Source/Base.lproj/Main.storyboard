@@ -204,7 +204,51 @@
                     <view key="view" contentMode="scaleToFill" id="Kfo-C0-EyI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IoS-Ph-hjc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterCell" rowHeight="80" id="MM5-aO-ju7" customClass="FilterTableViewCell" customModule="Yummy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MM5-aO-ju7" id="DxR-U6-M9f">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KNi-bU-N0j">
+                                                    <rect key="frame" x="20" y="10" width="335" height="59.5"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjd-dl-i8g" customClass="FilterItemsView" customModule="Yummy" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="59.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="OU7-MQ-icX"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KNi-bU-N0j" secondAttribute="bottom" constant="10" id="37D-uO-76g"/>
+                                                <constraint firstAttribute="trailing" secondItem="KNi-bU-N0j" secondAttribute="trailing" constant="20" id="frk-2q-7bP"/>
+                                                <constraint firstItem="KNi-bU-N0j" firstAttribute="leading" secondItem="DxR-U6-M9f" secondAttribute="leading" constant="20" id="gdx-e7-lhy"/>
+                                                <constraint firstItem="KNi-bU-N0j" firstAttribute="top" secondItem="DxR-U6-M9f" secondAttribute="top" constant="10" id="z3j-W1-wCa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mainStackView" destination="KNi-bU-N0j" id="JAs-gA-YnY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="IoS-Ph-hjc" secondAttribute="bottom" id="6v5-rt-ktB"/>
+                            <constraint firstAttribute="trailing" secondItem="IoS-Ph-hjc" secondAttribute="trailing" id="Myh-Je-2rY"/>
+                            <constraint firstItem="IoS-Ph-hjc" firstAttribute="leading" secondItem="Kfo-C0-EyI" secondAttribute="leading" id="TJF-Dc-4Tj"/>
+                            <constraint firstItem="IoS-Ph-hjc" firstAttribute="top" secondItem="Kfo-C0-EyI" secondAttribute="top" id="mqt-Ts-gZx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Filter" id="zge-Nt-ROj">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="MrW-LA-mge">
@@ -217,10 +261,13 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="filterTableView" destination="IoS-Ph-hjc" id="MQO-Wg-99A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gSc-9g-hSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255" y="750"/>
+            <point key="canvasLocation" x="2253.5999999999999" y="749.7751124437782"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dKe-06-9fY">

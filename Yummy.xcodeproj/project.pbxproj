@@ -23,6 +23,10 @@
 		A92E1D031F000E96008E0E1B /* BusinessFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D021F000E96008E0E1B /* BusinessFilters.swift */; };
 		A92E1D051F00285D008E0E1B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D041F00285D008E0E1B /* Constants.swift */; };
 		A92E1D071F003520008E0E1B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D061F003520008E0E1B /* FilterViewController.swift */; };
+		A92E1D091F00422A008E0E1B /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D081F00422A008E0E1B /* FilterTableViewCell.swift */; };
+		A92E1D0B1F00426C008E0E1B /* FilterTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D0A1F00426C008E0E1B /* FilterTableViewHandler.swift */; };
+		A92E1D0E1F005658008E0E1B /* FilterItemsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92E1D0D1F005658008E0E1B /* FilterItemsView.xib */; };
+		A92E1D101F0057D3008E0E1B /* FilterItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D0F1F0057D3008E0E1B /* FilterItemsView.swift */; };
 		A9DC86FC1EFEE89100A76BF6 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC86FB1EFEE89100A76BF6 /* Business.swift */; };
 		A9DC86FE1EFEFB0F00A76BF6 /* YummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC86FD1EFEFB0F00A76BF6 /* YummyViewController.swift */; };
 		A9DC87001EFEFD5F00A76BF6 /* LayerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC86FF1EFEFD5F00A76BF6 /* LayerUtils.swift */; };
@@ -47,6 +51,10 @@
 		A92E1D021F000E96008E0E1B /* BusinessFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessFilters.swift; sourceTree = "<group>"; };
 		A92E1D041F00285D008E0E1B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A92E1D061F003520008E0E1B /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		A92E1D081F00422A008E0E1B /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		A92E1D0A1F00426C008E0E1B /* FilterTableViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewHandler.swift; sourceTree = "<group>"; };
+		A92E1D0D1F005658008E0E1B /* FilterItemsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterItemsView.xib; sourceTree = "<group>"; };
+		A92E1D0F1F0057D3008E0E1B /* FilterItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterItemsView.swift; sourceTree = "<group>"; };
 		A9DC86FB1EFEE89100A76BF6 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		A9DC86FD1EFEFB0F00A76BF6 /* YummyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YummyViewController.swift; sourceTree = "<group>"; };
 		A9DC86FF1EFEFD5F00A76BF6 /* LayerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerUtils.swift; sourceTree = "<group>"; };
@@ -119,7 +127,9 @@
 		A90B78101EFE7E0B00381601 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A92E1D0C1F005634008E0E1B /* FilterItems */,
 				A92970F61EFF952D00995F9A /* BusinessTableViewCell.swift */,
+				A92E1D081F00422A008E0E1B /* FilterTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,8 +203,18 @@
 			isa = PBXGroup;
 			children = (
 				A92970F91EFF974100995F9A /* BusinessTableViewHandler.swift */,
+				A92E1D0A1F00426C008E0E1B /* FilterTableViewHandler.swift */,
 			);
 			path = ViewHandlers;
+			sourceTree = "<group>";
+		};
+		A92E1D0C1F005634008E0E1B /* FilterItems */ = {
+			isa = PBXGroup;
+			children = (
+				A92E1D0D1F005658008E0E1B /* FilterItemsView.xib */,
+				A92E1D0F1F0057D3008E0E1B /* FilterItemsView.swift */,
+			);
+			name = FilterItems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A90B780E1EFE7D0D00381601 /* Info.plist in Resources */,
+				A92E1D0E1F005658008E0E1B /* FilterItemsView.xib in Resources */,
 				A90B780D1EFE7D0D00381601 /* Main.storyboard in Resources */,
 				A90B780B1EFE7D0D00381601 /* Assets.xcassets in Resources */,
 				A90B780C1EFE7D0D00381601 /* LaunchScreen.storyboard in Resources */,
@@ -331,10 +352,13 @@
 				A92970FC1EFFA21F00995F9A /* BusinessWorker.swift in Sources */,
 				A92971001EFFA34600995F9A /* Coordinate.swift in Sources */,
 				A9DC86FC1EFEE89100A76BF6 /* Business.swift in Sources */,
+				A92E1D091F00422A008E0E1B /* FilterTableViewCell.swift in Sources */,
 				A9DC87001EFEFD5F00A76BF6 /* LayerUtils.swift in Sources */,
 				A90B78191EFE931800381601 /* YummyClient.swift in Sources */,
 				A92E1D051F00285D008E0E1B /* Constants.swift in Sources */,
 				A92970FA1EFF974100995F9A /* BusinessTableViewHandler.swift in Sources */,
+				A92E1D0B1F00426C008E0E1B /* FilterTableViewHandler.swift in Sources */,
+				A92E1D101F0057D3008E0E1B /* FilterItemsView.swift in Sources */,
 				A90B780A1EFE7D0D00381601 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
