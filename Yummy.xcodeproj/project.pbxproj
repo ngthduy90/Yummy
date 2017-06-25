@@ -13,13 +13,16 @@
 		A90B780C1EFE7D0D00381601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90B78041EFE7D0D00381601 /* LaunchScreen.storyboard */; };
 		A90B780D1EFE7D0D00381601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90B78061EFE7D0D00381601 /* Main.storyboard */; };
 		A90B780E1EFE7D0D00381601 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90B78081EFE7D0D00381601 /* Info.plist */; };
-		A90B780F1EFE7D0D00381601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B78091EFE7D0D00381601 /* ViewController.swift */; };
 		A90B78191EFE931800381601 /* YummyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B78181EFE931800381601 /* YummyClient.swift */; };
 		A92970F71EFF952D00995F9A /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92970F61EFF952D00995F9A /* BusinessTableViewCell.swift */; };
 		A92970FA1EFF974100995F9A /* BusinessTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92970F91EFF974100995F9A /* BusinessTableViewHandler.swift */; };
 		A92970FC1EFFA21F00995F9A /* BusinessWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92970FB1EFFA21F00995F9A /* BusinessWorker.swift */; };
 		A92970FE1EFFA27500995F9A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92970FD1EFFA27500995F9A /* Location.swift */; };
 		A92971001EFFA34600995F9A /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92970FF1EFFA34600995F9A /* Coordinate.swift */; };
+		A92E1D011F000B68008E0E1B /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D001F000B68008E0E1B /* FrameView.swift */; };
+		A92E1D031F000E96008E0E1B /* BusinessFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D021F000E96008E0E1B /* BusinessFilters.swift */; };
+		A92E1D051F00285D008E0E1B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D041F00285D008E0E1B /* Constants.swift */; };
+		A92E1D071F003520008E0E1B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E1D061F003520008E0E1B /* FilterViewController.swift */; };
 		A9DC86FC1EFEE89100A76BF6 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC86FB1EFEE89100A76BF6 /* Business.swift */; };
 		A9DC86FE1EFEFB0F00A76BF6 /* YummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC86FD1EFEFB0F00A76BF6 /* YummyViewController.swift */; };
 		A9DC87001EFEFD5F00A76BF6 /* LayerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC86FF1EFEFD5F00A76BF6 /* LayerUtils.swift */; };
@@ -34,13 +37,16 @@
 		A90B78051EFE7D0D00381601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A90B78071EFE7D0D00381601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A90B78081EFE7D0D00381601 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A90B78091EFE7D0D00381601 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A90B78181EFE931800381601 /* YummyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YummyClient.swift; sourceTree = "<group>"; };
 		A92970F61EFF952D00995F9A /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
 		A92970F91EFF974100995F9A /* BusinessTableViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewHandler.swift; sourceTree = "<group>"; };
 		A92970FB1EFFA21F00995F9A /* BusinessWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessWorker.swift; sourceTree = "<group>"; };
 		A92970FD1EFFA27500995F9A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A92970FF1EFFA34600995F9A /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		A92E1D001F000B68008E0E1B /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
+		A92E1D021F000E96008E0E1B /* BusinessFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessFilters.swift; sourceTree = "<group>"; };
+		A92E1D041F00285D008E0E1B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A92E1D061F003520008E0E1B /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		A9DC86FB1EFEE89100A76BF6 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		A9DC86FD1EFEFB0F00A76BF6 /* YummyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YummyViewController.swift; sourceTree = "<group>"; };
 		A9DC86FF1EFEFD5F00A76BF6 /* LayerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerUtils.swift; sourceTree = "<group>"; };
@@ -106,7 +112,6 @@
 				A90B78131EFE7E0B00381601 /* Services */,
 				A90B78151EFE7E0B00381601 /* Models */,
 				A90B78171EFE7E2C00381601 /* Supports */,
-				A90B78091EFE7D0D00381601 /* ViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -131,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				A9DC86FF1EFEFD5F00A76BF6 /* LayerUtils.swift */,
+				A92E1D001F000B68008E0E1B /* FrameView.swift */,
+				A92E1D041F00285D008E0E1B /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -147,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				A9DC86FD1EFEFB0F00A76BF6 /* YummyViewController.swift */,
+				A92E1D061F003520008E0E1B /* FilterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 				A9DC86FB1EFEE89100A76BF6 /* Business.swift */,
 				A92970FD1EFFA27500995F9A /* Location.swift */,
 				A92970FF1EFFA34600995F9A /* Coordinate.swift */,
+				A92E1D021F000E96008E0E1B /* BusinessFilters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,15 +322,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A92E1D071F003520008E0E1B /* FilterViewController.swift in Sources */,
+				A92E1D011F000B68008E0E1B /* FrameView.swift in Sources */,
+				A92E1D031F000E96008E0E1B /* BusinessFilters.swift in Sources */,
 				A9DC86FE1EFEFB0F00A76BF6 /* YummyViewController.swift in Sources */,
 				A92970F71EFF952D00995F9A /* BusinessTableViewCell.swift in Sources */,
 				A92970FE1EFFA27500995F9A /* Location.swift in Sources */,
-				A90B780F1EFE7D0D00381601 /* ViewController.swift in Sources */,
 				A92970FC1EFFA21F00995F9A /* BusinessWorker.swift in Sources */,
 				A92971001EFFA34600995F9A /* Coordinate.swift in Sources */,
 				A9DC86FC1EFEE89100A76BF6 /* Business.swift in Sources */,
 				A9DC87001EFEFD5F00A76BF6 /* LayerUtils.swift in Sources */,
 				A90B78191EFE931800381601 /* YummyClient.swift in Sources */,
+				A92E1D051F00285D008E0E1B /* Constants.swift in Sources */,
 				A92970FA1EFF974100995F9A /* BusinessTableViewHandler.swift in Sources */,
 				A90B780A1EFE7D0D00381601 /* AppDelegate.swift in Sources */,
 			);

@@ -10,5 +10,6 @@ target 'Yummy' do
   pod 'SwiftyJSON', '~> 3.1'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'OAuthSwift', '~> 1.1'
+  pod 'PKHUD', '~> 4.2'
 
 end

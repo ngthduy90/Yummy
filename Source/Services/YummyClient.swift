@@ -43,7 +43,12 @@ class YummyClient {
                                             version: .oauth1)
     }
     
-    func search(with term: String, sort: YummySortMode?, categories: [String]?, deals: Bool?, completion: @escaping (YummyResponse) -> ()) {
+    func search(with term: String,
+                sort: YummySortMode?,
+                categories: [String]?,
+                deals: Bool?,
+                distance: Double?,
+                completion: @escaping (YummyResponse) -> ()) {
         
         var parameters: [String : Any] = ["term": term, "ll": defaultLocation.rawString]
         
@@ -57,6 +62,10 @@ class YummyClient {
         
         if let deals = deals {
             parameters["deals_filter"] = deals
+        }
+        
+        if let radius = distance {
+            parameters["radius_filter"] = Double.minimum(radius, Constants.MaximumRadius)
         }
         
         let _ = self.clientOAuth?.get("\(self.baseUrl)search/",

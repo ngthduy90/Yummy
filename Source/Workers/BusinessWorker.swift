@@ -10,13 +10,14 @@ import Foundation
 
 class BusinessWorker {
     
-    class func search(with term: String, completion: @escaping ([Business]?) -> Void) {
+    class func search(with filters: BusinessFilters, completion: @escaping ([Business]?) -> Void) {
         
         YummyClient.instance.search(
-            with: term,
-            sort: YummySortMode.bestMatched,
-            categories: nil,
-            deals: false) { response -> Void in
+            with: filters.term,
+            sort: filters.sortBy,
+            categories: filters.categories,
+            deals: filters.isOfferDeals,
+            distance: filters.radius) { response -> Void in
                 switch response {
                     
                 case .success(let result):

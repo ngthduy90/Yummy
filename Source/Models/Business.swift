@@ -11,8 +11,6 @@ import SwiftyJSON
 
 class Business {
     
-    static let milesPerMeter = 0.000621371
-    
     var name: String = ""
     var distance: Double = 0.0
     var reviewCount: Int = 0
@@ -42,7 +40,7 @@ class Business {
     
     var distanceInMiles: String {
         get {
-            return String(format: "%.2f mi", Business.milesPerMeter * distance)
+            return String(format: "%.2f mi", Constants.MilesPerMeter * distance)
         }
     }
 }

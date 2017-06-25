@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,11 +25,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sB-p6-cgP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.54901960780000003" green="0.75686274509999996" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="208" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-oE-iDu">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="60" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="208" id="sAO-4g-BRP" customClass="BusinessTableViewCell" customModule="Yummy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="208"/>
@@ -130,17 +132,55 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ9-mc-hRB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ez-A6-gwk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pFE-gv-8Hf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAV-mX-V4G">
+                                        <rect key="frame" x="307" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wAV-mX-V4G" secondAttribute="height" multiplier="1:1" id="U7o-x9-ssC"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                        <state key="normal" title="Button" image="filters"/>
+                                        <connections>
+                                            <action selector="didTapShowFilterScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m28-e6-fiq"/>
+                                            <segue destination="Sds-GS-TVg" kind="show" id="e5B-gp-cmg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2ez-A6-gwk" firstAttribute="leading" secondItem="DZ9-mc-hRB" secondAttribute="leading" id="7T8-BH-PqF"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="wAV-mX-V4G" secondAttribute="trailing" id="8Kb-gV-K3M"/>
+                                    <constraint firstItem="wAV-mX-V4G" firstAttribute="top" secondItem="DZ9-mc-hRB" secondAttribute="top" id="Cbx-pT-OYe"/>
+                                    <constraint firstAttribute="height" constant="60" id="J8y-S3-PXx"/>
+                                    <constraint firstItem="2ez-A6-gwk" firstAttribute="top" secondItem="DZ9-mc-hRB" secondAttribute="top" id="PnU-QN-jdE"/>
+                                    <constraint firstItem="wAV-mX-V4G" firstAttribute="height" secondItem="DZ9-mc-hRB" secondAttribute="height" id="bDC-ue-tDM"/>
+                                    <constraint firstItem="2ez-A6-gwk" firstAttribute="width" secondItem="DZ9-mc-hRB" secondAttribute="width" id="mUX-3X-G5c"/>
+                                    <constraint firstItem="2ez-A6-gwk" firstAttribute="height" secondItem="DZ9-mc-hRB" secondAttribute="height" id="p2n-7g-D5Y"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Om2-oE-iDu" secondAttribute="bottom" id="1jQ-yV-sAi"/>
                             <constraint firstItem="Om2-oE-iDu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BVb-d3-TGZ"/>
+                            <constraint firstItem="DZ9-mc-hRB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DmV-GP-p7D"/>
+                            <constraint firstItem="DZ9-mc-hRB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Gjh-8n-aEe"/>
                             <constraint firstItem="5sB-p6-cgP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wpr-ne-iqU"/>
                             <constraint firstItem="5sB-p6-cgP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ceh-jN-EwG"/>
                             <constraint firstItem="5sB-p6-cgP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="di6-d0-whc"/>
                             <constraint firstItem="5sB-p6-cgP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="jRt-M9-7dG"/>
                             <constraint firstAttribute="trailing" secondItem="Om2-oE-iDu" secondAttribute="trailing" id="t4k-lk-et6"/>
                             <constraint firstItem="Om2-oE-iDu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vnE-bI-rVW"/>
+                            <constraint firstAttribute="trailing" secondItem="DZ9-mc-hRB" secondAttribute="trailing" id="xug-wz-BBm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hWi-As-FCd"/>
@@ -152,6 +192,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144.8" y="749.7751124437782"/>
+        </scene>
+        <!--Filter-->
+        <scene sceneID="b9U-Fu-rxj">
+            <objects>
+                <viewController id="Sds-GS-TVg" customClass="FilterViewController" customModule="Yummy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TuT-Jd-t0U"/>
+                        <viewControllerLayoutGuide type="bottom" id="kQI-lM-4o8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kfo-C0-EyI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filter" id="zge-Nt-ROj">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="MrW-LA-mge">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="didTapDismissScreen:" destination="Sds-GS-TVg" id="vUK-xs-NMh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="ppn-uY-smp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSc-9g-hSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2255" y="750"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dKe-06-9fY">
@@ -172,4 +241,7 @@
             <point key="canvasLocation" x="112.8" y="749.7751124437782"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filters" width="60" height="60"/>
+    </resources>
 </document>
