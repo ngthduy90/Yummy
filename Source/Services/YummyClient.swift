@@ -30,6 +30,8 @@ class YummyClient {
     static let instance = YummyClient()
     
     let baseUrl = "https://api.yelp.com/v2/"
+    let defaultLocation:Coordinate = Coordinate(latitude: 37.785771, longitude: -122.406165)
+    
     let clientOAuth: OAuthSwiftClient?
     let apiConsoleInfo = YummyAPIConsole()
     
@@ -43,18 +45,18 @@ class YummyClient {
     
     func search(with term: String, sort: YummySortMode?, categories: [String]?, deals: Bool?, completion: @escaping (YummyResponse) -> ()) {
         
-        var parameters: [String : AnyObject] = ["term": term as AnyObject, "ll": "37.785771,-122.406165" as AnyObject]
+        var parameters: [String : Any] = ["term": term, "ll": defaultLocation.rawString]
         
         if sort != nil {
-            parameters["sort"] = sort!.rawValue as AnyObject?
+            parameters["sort"] = sort!.rawValue
         }
         
         if categories != nil && categories!.count > 0 {
-            parameters["category_filter"] = (categories!).joined(separator: ",") as AnyObject?
+            parameters["category_filter"] = (categories!).joined(separator: ",")
         }
         
         if let deals = deals {
-            parameters["deals_filter"] = deals as AnyObject?
+            parameters["deals_filter"] = deals
         }
         
         let _ = self.clientOAuth?.get("\(self.baseUrl)search/",
