@@ -68,7 +68,7 @@ extension FilterTableViewHandler: UITableViewDataSource {
             return 600.0
             
         default:
-            return 100.0
+            return 80.0
         }
     }
     
@@ -77,10 +77,7 @@ extension FilterTableViewHandler: UITableViewDataSource {
         print(indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: filterCell, for: indexPath) as! FilterTableViewCell
         
-        if isExpand {
-            cell.show()
-            isExpand = false
-        }
+        cell.render()
         
         return cell
     }

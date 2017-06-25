@@ -12,6 +12,8 @@ class FilterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mainStackView: UIStackView!
     
+    var views: [UIView] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -21,12 +23,14 @@ class FilterTableViewCell: UITableViewCell {
 
     }
     
-    func show() {
-        let newView = UIView()
-        newView.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
-        newView.backgroundColor = UIColor.blue
+    func render() {
+        let view = FilterItemsView(frame: CGRect(x: 0.0, y: 0.0, width: mainStackView.bounds.width, height: 60.0))
+        view.titleLabel.text = "ABC"
+        let compView = UISwitch(frame: CGRect(x: 0.0, y: 0.0, width: 80.0, height: 60.0))
+        compView.center = view.dynamicView.center
+        view.dynamicView.addSubview(compView)
         
-        mainStackView.addArrangedSubview(newView)
+        mainStackView.addArrangedSubview(view)
     }
     
     func hide() {
