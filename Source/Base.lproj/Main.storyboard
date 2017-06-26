@@ -143,6 +143,30 @@
                                         </view>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rog-wO-dAc">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="60"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9vR-KS-RB7">
+                                                <rect key="frame" x="8" y="10" width="53.5" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyP-M5-Z7f" customClass="PaddingLabel" customModule="Yummy" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="40"/>
+                                                        <color key="backgroundColor" red="0.1176470588" green="0.66666666669999997" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="9vR-KS-RB7" firstAttribute="top" secondItem="rog-wO-dAc" secondAttribute="top" constant="10" id="2IR-0k-4L3"/>
+                                            <constraint firstAttribute="bottom" secondItem="9vR-KS-RB7" secondAttribute="bottom" constant="10" id="B6W-DQ-2TK"/>
+                                            <constraint firstItem="9vR-KS-RB7" firstAttribute="height" secondItem="rog-wO-dAc" secondAttribute="height" constant="-20" id="gDd-YM-1io"/>
+                                            <constraint firstAttribute="trailing" secondItem="9vR-KS-RB7" secondAttribute="trailing" id="vd1-Ii-RFO"/>
+                                            <constraint firstItem="9vR-KS-RB7" firstAttribute="leading" secondItem="rog-wO-dAc" secondAttribute="leadingMargin" id="vgT-hT-Flp"/>
+                                        </constraints>
+                                    </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAV-mX-V4G">
                                         <rect key="frame" x="307" y="0.0" width="60" height="60"/>
                                         <constraints>
@@ -159,12 +183,16 @@
                                 <constraints>
                                     <constraint firstItem="2ez-A6-gwk" firstAttribute="leading" secondItem="DZ9-mc-hRB" secondAttribute="leading" id="7T8-BH-PqF"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="wAV-mX-V4G" secondAttribute="trailing" id="8Kb-gV-K3M"/>
+                                    <constraint firstItem="wAV-mX-V4G" firstAttribute="leading" secondItem="rog-wO-dAc" secondAttribute="trailing" constant="4" id="BrV-f5-EwF"/>
                                     <constraint firstItem="wAV-mX-V4G" firstAttribute="top" secondItem="DZ9-mc-hRB" secondAttribute="top" id="Cbx-pT-OYe"/>
                                     <constraint firstAttribute="height" constant="60" id="J8y-S3-PXx"/>
+                                    <constraint firstAttribute="bottom" secondItem="rog-wO-dAc" secondAttribute="bottom" id="LLn-SZ-iHC"/>
                                     <constraint firstItem="2ez-A6-gwk" firstAttribute="top" secondItem="DZ9-mc-hRB" secondAttribute="top" id="PnU-QN-jdE"/>
+                                    <constraint firstItem="rog-wO-dAc" firstAttribute="leading" secondItem="DZ9-mc-hRB" secondAttribute="leading" id="Set-WN-4Fe"/>
                                     <constraint firstItem="wAV-mX-V4G" firstAttribute="height" secondItem="DZ9-mc-hRB" secondAttribute="height" id="bDC-ue-tDM"/>
                                     <constraint firstItem="2ez-A6-gwk" firstAttribute="width" secondItem="DZ9-mc-hRB" secondAttribute="width" id="mUX-3X-G5c"/>
                                     <constraint firstItem="2ez-A6-gwk" firstAttribute="height" secondItem="DZ9-mc-hRB" secondAttribute="height" id="p2n-7g-D5Y"/>
+                                    <constraint firstItem="rog-wO-dAc" firstAttribute="top" secondItem="DZ9-mc-hRB" secondAttribute="top" id="uy3-Rg-l8t"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -187,6 +215,8 @@
                     <connections>
                         <outlet property="backgroundView" destination="5sB-p6-cgP" id="DP2-UJ-Hvk"/>
                         <outlet property="businessTableView" destination="Om2-oE-iDu" id="vgj-Zx-psf"/>
+                        <outlet property="filterStackView" destination="9vR-KS-RB7" id="IVH-ye-PrT"/>
+                        <outlet property="searchLabel" destination="tyP-M5-Z7f" id="kOc-Vk-Jme"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

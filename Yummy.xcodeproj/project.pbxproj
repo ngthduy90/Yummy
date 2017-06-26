@@ -18,6 +18,7 @@
 		A923E1041F01929D00A21AE3 /* FilterServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A923E1031F01929D00A21AE3 /* FilterServices.swift */; };
 		A923E1061F01938D00A21AE3 /* FilterSortItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A923E1051F01938D00A21AE3 /* FilterSortItem.swift */; };
 		A923E1081F019D4A00A21AE3 /* FilterDistanceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A923E1071F019D4A00A21AE3 /* FilterDistanceItem.swift */; };
+		A923E10A1F01A80A00A21AE3 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A923E1091F01A80A00A21AE3 /* PaddingLabel.swift */; };
 		A92970F71EFF952D00995F9A /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92970F61EFF952D00995F9A /* BusinessTableViewCell.swift */; };
 		A92970FA1EFF974100995F9A /* BusinessTableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92970F91EFF974100995F9A /* BusinessTableViewHandler.swift */; };
 		A92970FC1EFFA21F00995F9A /* BusinessWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92970FB1EFFA21F00995F9A /* BusinessWorker.swift */; };
@@ -48,6 +49,7 @@
 		A923E1031F01929D00A21AE3 /* FilterServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterServices.swift; sourceTree = "<group>"; };
 		A923E1051F01938D00A21AE3 /* FilterSortItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSortItem.swift; sourceTree = "<group>"; };
 		A923E1071F019D4A00A21AE3 /* FilterDistanceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDistanceItem.swift; sourceTree = "<group>"; };
+		A923E1091F01A80A00A21AE3 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		A92970F61EFF952D00995F9A /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
 		A92970F91EFF974100995F9A /* BusinessTableViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewHandler.swift; sourceTree = "<group>"; };
 		A92970FB1EFFA21F00995F9A /* BusinessWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessWorker.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				A92970F61EFF952D00995F9A /* BusinessTableViewCell.swift */,
 				A92E1D081F00422A008E0E1B /* ImageViewCell.swift */,
 				A923E1011F0177BB00A21AE3 /* SwitchViewCell.swift */,
+				A923E1091F01A80A00A21AE3 /* PaddingLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				A9DC87001EFEFD5F00A76BF6 /* LayerUtils.swift in Sources */,
 				A90B78191EFE931800381601 /* YummyClient.swift in Sources */,
 				A923E1021F0177BB00A21AE3 /* SwitchViewCell.swift in Sources */,
+				A923E10A1F01A80A00A21AE3 /* PaddingLabel.swift in Sources */,
 				A92E1D051F00285D008E0E1B /* Constants.swift in Sources */,
 				A92970FA1EFF974100995F9A /* BusinessTableViewHandler.swift in Sources */,
 				A92E1D0B1F00426C008E0E1B /* FilterTableViewHandler.swift in Sources */,

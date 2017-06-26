@@ -14,12 +14,15 @@ class YummyViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var businessTableView: UITableView!
+    @IBOutlet weak var searchLabel: PaddingLabel!
+    @IBOutlet weak var filterStackView: UIStackView!
     
     fileprivate var searchBar: UISearchBar!
     fileprivate let businessTableHandler = BusinessTableViewHandler()
     
     fileprivate var businessFilters = BusinessFilters()
     fileprivate var needSearchAgain: Bool = false
+    fileprivate var filterItems: [UILabel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,8 @@ class YummyViewController: UIViewController {
         assignDelegates()
         renderBusinessTableStyle()
         renderNavigationBar()
+        
+        searchLabel.removeFromSuperview()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,11 +44,15 @@ class YummyViewController: UIViewController {
         } else {
             searchBar.becomeFirstResponder()
         }
+        
+        refreshFilterItems()
     }
     
     func search(_ text: String) {
         HUD.flash(.progress)
+        
         businessFilters.term = text
+        refreshFilterItems()
         
         BusinessWorker.search(with: businessFilters) {
             guard let businesses = $0 else {
@@ -147,6 +156,30 @@ extension YummyViewController {
         navigationController?.navigationBar.isTranslucent = true
         
         UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    fileprivate func refreshFilterItems() {
+        filterItems.forEach { $0.removeFromSuperview() }
+        
+        let items = businessFilters.getFormatFilters()
+        
+        items.forEach {
+            let item = createFilterLabel($0)
+            filterItems.append(item)
+            
+            self.filterStackView.addArrangedSubview(item)
+        }
+    }
+    
+    fileprivate func createFilterLabel(_ text: String) -> UILabel {
+        let label = UILabel()
+        label.text = "   \(text)   "
+        label.textColor = UIColor.white
+        label.backgroundColor = HexColor("1FBCD2")!
+        label.layer.cornerRadius = 10.0
+        label.clipsToBounds = true
+        
+        return label
     }
 }
 
