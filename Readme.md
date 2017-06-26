@@ -1,17 +1,17 @@
-# Project 2 - *Name of App Here*
+# Project 2 - *Yummy*
 
 **Yummy** is a Yelp search app using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api).
 
-Time spent: **X** hours spent in total
+Time spent: **16** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] Search results page
-   - [ ] Table rows should be dynamic height according to the content height.
-   - [ ] Custom cells should have the proper Auto Layout constraints.
-   - [ ] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does).
+- [x] Search results page
+   - [x] Table rows should be dynamic height according to the content height.
+   - [x] Custom cells should have the proper Auto Layout constraints.
+   - [x] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does).
 - [ ] Filter page. Unfortunately, not all the filters are supported in the Yelp API.
    - [ ] The filters you should actually have are: category, sort (best match, distance, highest rated), distance, deals (on/off).
    - [ ] The filters table should be organized into sections as in the mock.
@@ -32,18 +32,18 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x]Refactor YelpClient in Yelp-Starter project
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Dropdown cell
+2. Dynamic add custom cell
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/ngthduy90/Yummy/blob/master/walkthrough.gif?raw=true' title='Walkthrough' width='' alt='Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
