@@ -23,35 +23,44 @@ class BusinessFilters {
             filters.append("Search: \(term)")
         }
         
-        if let sortByString = formatSortMode() {
-            filters.append(sortByString)
+        if isOfferDeals {
+            filters.append("Offer Deals")
         }
+        
+        if let sortByString = sortModeAsString() {
+            filters.append("Sort by: \(sortByString)")
+        }
+        
+        filters.append("Distance: \(distanceAsString())")
         
         if let categories = categories {
             let ctgString = categories.joined(separator: ", ")
             filters.append("Categories: \(ctgString)")
         }
         
-        if isOfferDeals {
-            filters.append("Offer Deals")
-        }
-        
         return filters
     }
     
-    private func formatSortMode() -> String? {
-        let sortText = "Sort by: "
+    func sortModeAsString() -> String? {
         
         switch sortBy {
             
         case .bestMatched:
-            return "\(sortText) Best Matched"
+            return "Best Matched"
             
         case .distance:
-            return "\(sortText) Distance"
+            return "Distance"
             
         case .highestRated:
-            return "\(sortText) Highest Rated"
+            return "Highest Rated"
         }
+    }
+    
+    func distanceAsString() -> String {
+        guard let value = radius else {
+            return "Auto"
+        }
+        
+        return String(format: "%.2f miles", Constants.MilesPerMeter * value)
     }
 }

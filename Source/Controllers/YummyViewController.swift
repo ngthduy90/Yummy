@@ -17,7 +17,9 @@ class YummyViewController: UIViewController {
     
     fileprivate var searchBar: UISearchBar!
     fileprivate let businessTableHandler = BusinessTableViewHandler()
+    
     fileprivate var businessFilters = BusinessFilters()
+    fileprivate var needSearchAgain: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,12 @@ class YummyViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.backgroundView.applyGradient(colours: [HexColor("E35959")!, HexColor("FFB199")!], direction: .vertical)
         
-        self.searchBar.becomeFirstResponder()
+        if needSearchAgain {
+            needSearchAgain = false
+            search(businessFilters.term)
+        } else {
+            searchBar.becomeFirstResponder()
+        }
     }
     
     func search(_ text: String) {
@@ -40,14 +47,14 @@ class YummyViewController: UIViewController {
         
         BusinessWorker.search(with: businessFilters) {
             guard let businesses = $0 else {
-                HUD.flash(.error)
+                HUD.flash(.error, delay: 1.0)
                 return
             }
             
             self.businessTableHandler.businesses = businesses
             self.businessTableView.reloadData()
             
-            HUD.flash(.success)
+            HUD.flash(.success, delay: 0.6)
         }
         
     }
@@ -60,12 +67,17 @@ class YummyViewController: UIViewController {
         
         if let nextVC = segue.destination as? FilterViewController {
             nextVC.delegate = self
-            nextVC.businessFilters = self.businessFilters
+            nextVC.filterTableHandler.businessFilters = self.businessFilters
         }
     }
 }
 
 extension YummyViewController: FilterViewControllerDelegate {
+    
+    func filterViewController(needSearch filter: BusinessFilters) {
+        self.businessFilters = filter
+        self.needSearchAgain = true
+    }
     
     func filterViewController(didCancel viewController: FilterViewController) {
         
@@ -104,6 +116,9 @@ extension YummyViewController: UISearchBarDelegate {
 extension YummyViewController {
     
     fileprivate func initSearchBar() {
+        let cancelButtonAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
+        UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes as? [String : AnyObject], for: .normal)
+        
         searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.sizeToFit()

@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     
-    static let MilesPerMeter = 0.000621371
+    static let MilesPerMeter = 0.000625
     
     static let MaximumRadius: Double = 40000.0
     

@@ -12,6 +12,8 @@ import ChameleonFramework
 protocol FilterViewControllerDelegate: class {
     
     func filterViewController(didCancel viewController: FilterViewController)
+    
+    func filterViewController(needSearch filter: BusinessFilters)
 }
 
 class FilterViewController: UIViewController {
@@ -19,9 +21,7 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var filterTableView: UITableView!
     
     weak var delegate: FilterViewControllerDelegate?
-    
-    var businessFilters = BusinessFilters()
-    fileprivate let filterTableHandler = FilterTableViewHandler()
+    let filterTableHandler = FilterTableViewHandler()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,14 @@ class FilterViewController: UIViewController {
         renderFilterTable()
     }
     
+    @IBAction func didTapSearch(_ sender: Any) {
+        
+        self.delegate?.filterViewController(needSearch: filterTableHandler.businessFilters)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func didTapDismissScreen(_ sender: Any) {
+        
         self.delegate?.filterViewController(didCancel: self)
         self.navigationController?.popViewController(animated: true)
     }
@@ -43,12 +50,13 @@ extension FilterViewController {
     fileprivate func assignDelegates() {
         filterTableView.delegate = filterTableHandler
         filterTableView.dataSource = filterTableHandler
+        filterTableHandler.filterTableView = filterTableView
     }
     
     fileprivate func renderFilterTable() {
         filterTableView.separatorStyle = .none
-//        filterTableView.estimatedRowHeight = 400.0
-//        filterTableView.rowHeight = UITableViewAutomaticDimension
+        filterTableView.allowsMultipleSelection = false
+        filterTableView.allowsSelection = false
     }
     
     fileprivate func renderNavigationBar() {
